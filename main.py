@@ -70,7 +70,8 @@ def ask():
     return True if answer == 'y' else False
 
 if __name__ == '__main__':
-    player_1 = Loto_Player('Julia')
+    name = input("Введите ваше имя: ")
+    player_1 = Loto_Player(name)
     player_1.print_card()
     player_2 = Loto_Player('Computer')
     player_2.print_card()
