@@ -19,7 +19,7 @@ class Master:
         print("*" + " " * 10 + "*")
         print("*" * 12)
 
-class Loto_Player:
+class Player:
     def __init__(self, _name):
         self.name = _name
         self.card = random.sample(range(1, 100), 18)
@@ -71,9 +71,9 @@ def ask():
 
 if __name__ == '__main__':
     name = input("Введите ваше имя: ")
-    player_1 = Loto_Player(name)
+    player_1 = Player(name)
     player_1.print_card()
-    player_2 = Loto_Player('Computer')
+    player_2 = Player('Computer')
     player_2.print_card()
 
     go_game = True
