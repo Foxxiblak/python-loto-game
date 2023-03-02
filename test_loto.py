@@ -1,6 +1,8 @@
 import unittest
 import random
-from main import Master, Player, ask
+from main import ask
+from master import Master
+from player import Player
 from unittest.mock import patch
 
 
