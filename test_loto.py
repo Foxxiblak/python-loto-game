@@ -17,6 +17,9 @@ class LotoMasterCase(unittest.TestCase):
         self.assertLess(self.master.make_choice(), 100)
         self.assertGreater(self.master.make_choice(), -1)
 
+    def test__str__(self):
+        self.assertEqual(self.master.__str__(), f'Отыгранные бочонки: []')
+
 
 class LotoPlayerCase(unittest.TestCase):
     def setUp(self):
@@ -44,6 +47,13 @@ class LotoPlayerCase(unittest.TestCase):
         num = random.choice(self.player.card)
         self.player.automatic_move(num)
         self.assertEqual(self.player.crossed_out, [num])
+
+    def test__str__(self):
+        self.assertEqual(self.player.__str__(), f'{self.player.name}: {self.player.card}')
+
+    def test__eq__(self):
+        self.assertTrue(self.player.__eq__(self.player))
+        self.assertFalse(self.player.__eq__(Player('Test_2')))
 
 
 class DefaultTest(unittest.TestCase):

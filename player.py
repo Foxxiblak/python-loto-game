@@ -9,6 +9,12 @@ class Player:
         self.third_line_pos = self.generate_and_sorted_line()
         self.crossed_out = []
 
+    def __str__(self):
+        return f'{self.name}: {self.card}'
+
+    def __eq__(self, other):
+        return self.name == other.name and self.card == other.card
+
     def generate_and_sorted_line(self):
         return sorted(random.sample(range(0, 9), 6))
 
@@ -45,3 +51,7 @@ class Player:
     def automatic_move(self, num):
         if num in self.card:
             self.crossed_out.append(num)
+
+if __name__ == '__main__':
+    player = Player('Test')
+    print(player)

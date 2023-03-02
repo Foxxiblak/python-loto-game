@@ -5,6 +5,9 @@ class Master:
         self.bag = [i for i in range(0, 100)]
         self.used = []
 
+    def __str__(self):
+        return f'Отыгранные бочонки: {self.used}'
+
     def make_choice(self):
         num = random.choice(self.bag)
         self.used.append(num)
@@ -17,3 +20,7 @@ class Master:
         print("*" + " " * 4 + f'{num:02d}' + " " * 4 + "*")
         print("*" + " " * 10 + "*")
         print("*" * 12)
+
+if __name__ == '__main__':
+    master = Master()
+    print(master)
